@@ -116,6 +116,8 @@ app.post("/api/generate", async (req, res) => {
       typeof aiMsg.content === "string"
         ? aiMsg.content.trim()
         : String(aiMsg.content || "").trim();
+    
+    console.log("AI OUTPUT:", line);
 
     if (!line) {
       return res.status(500).json({
